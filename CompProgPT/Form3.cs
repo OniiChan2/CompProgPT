@@ -63,14 +63,14 @@ namespace CompProgPT
 
                 if (price > current_balance)
                 {
-                    MessageBox.Show("BALANCE ERROR", $"Your Balance:{current_balance}$ is lower than {price}$", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show($"Your Balance:{current_balance}$ is lower than {price}$", "BALANCE ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
 
                 if (price <= current_balance)
                 {
                     string items1 = String.Join(" ,\n", items);
-                    MessageBox.Show("Order Confirmed!","Thank you for Shopping! Orders have been successfully placed!");
+                    MessageBox.Show("Order Confirmed!", "Thank you for Shopping! Orders have been successfully placed!");
                     MessageBox.Show("Your Orders: " + items1);
                     MessageBox.Show("You will now be brought back to the Login Page");
                     new_balance = current_balance - price;
@@ -173,6 +173,16 @@ namespace CompProgPT
             points += item_points;
             price += item_price;
             items.Add("MODULE FIVE: DIFFERENT DATA TYPES IN C#");
+            added();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int item_price = 200;
+            int item_points = 10;
+            points += item_points;
+            price += item_price;
+            items.Add("MODULE SIX: CONTROL STRUCTURES IN C#");
             added();
         }
     }

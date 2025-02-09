@@ -61,6 +61,11 @@
             roundedPanels3 = new RoundedPanels();
             roundedPanels4 = new RoundedPanels();
             label12 = new Label();
+            roundedPanels6 = new RoundedPanels();
+            pictureBox11 = new PictureBox();
+            button6 = new Button();
+            label14 = new Label();
+            label13 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -76,6 +81,8 @@
             roundedPanels2.SuspendLayout();
             roundedPanels3.SuspendLayout();
             roundedPanels4.SuspendLayout();
+            roundedPanels6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // pictureBox2
@@ -168,6 +175,7 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
+            button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Black;
             button1.Location = new Point(25, 190);
@@ -193,6 +201,7 @@
             // button2
             // 
             button2.BackColor = Color.Transparent;
+            button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Black;
             button2.Location = new Point(25, 190);
@@ -253,6 +262,7 @@
             // button3
             // 
             button3.BackColor = Color.Transparent;
+            button3.Cursor = Cursors.Hand;
             button3.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
             button3.Location = new Point(22, 194);
@@ -292,7 +302,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Blue;
-            label8.Location = new Point(13, 165);
+            label8.Location = new Point(16, 165);
             label8.Name = "label8";
             label8.Size = new Size(41, 17);
             label8.TabIndex = 48;
@@ -301,9 +311,10 @@
             // button4
             // 
             button4.BackColor = Color.Transparent;
+            button4.Cursor = Cursors.Hand;
             button4.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.Black;
-            button4.Location = new Point(13, 185);
+            button4.Location = new Point(25, 202);
             button4.Name = "button4";
             button4.Size = new Size(121, 23);
             button4.TabIndex = 47;
@@ -327,7 +338,7 @@
             // 
             pictureBox9.BackColor = Color.Transparent;
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(22, 13);
+            pictureBox9.Location = new Point(25, 13);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(121, 115);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -337,6 +348,7 @@
             // button5
             // 
             button5.BackColor = Color.Transparent;
+            button5.Cursor = Cursors.Hand;
             button5.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button5.ForeColor = Color.Black;
             button5.Location = new Point(23, 202);
@@ -455,7 +467,7 @@
             roundedPanels3.GradientAngle = 90F;
             roundedPanels3.GradientBottomColor = Color.White;
             roundedPanels3.GradientTopColor = Color.FromArgb(128, 255, 255);
-            roundedPanels3.Location = new Point(745, 329);
+            roundedPanels3.Location = new Point(389, 329);
             roundedPanels3.Name = "roundedPanels3";
             roundedPanels3.Size = new Size(172, 235);
             roundedPanels3.TabIndex = 55;
@@ -490,6 +502,72 @@
             label12.TabIndex = 41;
             label12.Text = "200 ₱";
             // 
+            // roundedPanels6
+            // 
+            roundedPanels6.BackColor = Color.Transparent;
+            roundedPanels6.BorderRadius = 30;
+            roundedPanels6.Controls.Add(pictureBox11);
+            roundedPanels6.Controls.Add(button6);
+            roundedPanels6.Controls.Add(label14);
+            roundedPanels6.Controls.Add(label13);
+            roundedPanels6.ForeColor = Color.Transparent;
+            roundedPanels6.GradientAngle = 90F;
+            roundedPanels6.GradientBottomColor = Color.White;
+            roundedPanels6.GradientTopColor = Color.FromArgb(128, 255, 255);
+            roundedPanels6.Location = new Point(745, 329);
+            roundedPanels6.Name = "roundedPanels6";
+            roundedPanels6.Size = new Size(172, 235);
+            roundedPanels6.TabIndex = 56;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.BackColor = Color.Transparent;
+            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Location = new Point(22, 13);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(121, 115);
+            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox11.TabIndex = 53;
+            pictureBox11.TabStop = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Transparent;
+            button6.Cursor = Cursors.Hand;
+            button6.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.Black;
+            button6.Location = new Point(22, 202);
+            button6.Name = "button6";
+            button6.Size = new Size(121, 23);
+            button6.TabIndex = 55;
+            button6.Text = "ADD TO CART";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Black;
+            label14.Location = new Point(15, 131);
+            label14.Name = "label14";
+            label14.Size = new Size(154, 51);
+            label14.TabIndex = 54;
+            label14.Text = "MODULE SIX: \r\nCONTROL STRUCTURE\r\n IN C#";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.Blue;
+            label13.Location = new Point(22, 182);
+            label13.Name = "label13";
+            label13.Size = new Size(41, 17);
+            label13.TabIndex = 56;
+            label13.Text = "200 ₱";
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -497,6 +575,7 @@
             BackColor = SystemColors.ControlDarkDark;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(929, 598);
+            Controls.Add(roundedPanels6);
             Controls.Add(roundedPanels5);
             Controls.Add(roundedPanels3);
             Controls.Add(roundedPanels4);
@@ -532,6 +611,9 @@
             roundedPanels3.PerformLayout();
             roundedPanels4.ResumeLayout(false);
             roundedPanels4.PerformLayout();
+            roundedPanels6.ResumeLayout(false);
+            roundedPanels6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -569,5 +651,10 @@
         private RoundedPanels roundedPanels3;
         private RoundedPanels roundedPanels4;
         private Label label12;
+        private RoundedPanels roundedPanels6;
+        private PictureBox pictureBox11;
+        private Button button6;
+        private Label label14;
+        private Label label13;
     }
 }

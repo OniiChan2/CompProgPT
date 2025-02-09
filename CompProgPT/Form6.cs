@@ -13,6 +13,8 @@ namespace CompProgPT
 {
     public partial class Form6 : Form
     {
+        private string paymentDetails;
+       
         public Form6()
         {
             InitializeComponent();
@@ -41,6 +43,9 @@ namespace CompProgPT
                     this.label4.Text = $"Email: {myReader["Email"].ToString()}";
                     this.label5.Text = $"Phone Number: {myReader["Phone_Number"].ToString()}";
                     this.label5.Text = $"Payment Details: {myReader["Payment_Details"].ToString()}";
+                    paymentDetails = myReader["Payment_Details"].ToString();
+
+
                 }
 
                 if (myReader.NextResult())
@@ -65,14 +70,23 @@ namespace CompProgPT
         }
         private void button1_Click(object sender, EventArgs e)
         {
+           
             Form3 orders = new Form3();
             this.Hide();
             orders.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Form7 cashin = new Form7();
-            cashin.Show();
+            if (string.IsNullOrWhiteSpace(paymentDetails))
+            {
+                MessageBox.Show("Cannot Cash In! Payment details are blank or are Invalid.","Payment Details Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Hide();
+                Form7 cashin = new Form7();
+                cashin.Show();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -78,7 +78,6 @@
             Cash_In.Size = new Size(134, 40);
             Cash_In.TabIndex = 2;
             Cash_In.Text = "Cash In";
-            Cash_In.Click += Cash_In_Click;
             // 
             // button2
             // 

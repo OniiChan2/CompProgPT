@@ -96,12 +96,13 @@ namespace CompProgPT
         {
             cashin = 0;
             this.Hide();
+            Form6 Form6 = new Form6();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             Form6 Form6 = new Form6();
-            Form6.Hide();
+            Form6.Show();
             string username = Form1.username;
             string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
@@ -121,7 +122,6 @@ namespace CompProgPT
                     cmd.Parameters.Add("?balance", MySqlDbType.Int32).Value = added_balance;
                     cmd.ExecuteNonQuery();
                     MessageBox.Show(cashin + "$ Added to Balance");
-                    Form6.label6.Text = current_balance.ToString();
                     this.Hide();
                 }
                 catch (Exception ex)
@@ -135,9 +135,6 @@ namespace CompProgPT
                     mySqlConnection.Close();
                 }
         }
-        private void Cash_In_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
