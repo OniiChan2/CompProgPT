@@ -322,7 +322,6 @@
             label9.Size = new Size(159, 51);
             label9.TabIndex = 46;
             label9.Text = "MODULE FOUR: \r\nSTRINGBUILDERS IN C#\r\n\r\n";
-            label9.Click += label9_Click;
             // 
             // pictureBox9
             // 
@@ -460,7 +459,6 @@
             roundedPanels3.Name = "roundedPanels3";
             roundedPanels3.Size = new Size(172, 235);
             roundedPanels3.TabIndex = 55;
-            roundedPanels3.Paint += roundedPanels3_Paint;
             // 
             // roundedPanels4
             // 

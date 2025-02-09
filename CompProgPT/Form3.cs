@@ -106,7 +106,6 @@ namespace CompProgPT
         {
             Form4 Cart = new Form4();
             Cart.Show();
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -175,16 +174,6 @@ namespace CompProgPT
             price += item_price;
             items.Add("MODULE FIVE: DIFFERENT DATA TYPES IN C#");
             added();
-        }
-
-        private void roundedPanels3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

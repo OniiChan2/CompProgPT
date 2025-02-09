@@ -21,31 +21,34 @@ namespace CompProgPT
         public void Form6_Load(object sender, EventArgs e)
         {
             string username = Form1.username;
-            this.label1.Text = username + "'s Profile";
+            this.label1.Text = $"{username}'s Profile";
             string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
 
             try
             {
                 mySqlConnection.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM usersinfo WHERE username ='" + username + "';" + "SELECT * FROM balance WHERE username='" + username + "'", mySqlConnection);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM usersinfo WHERE username = ?username;" +
+                    "SELECT * FROM balance WHERE username= ?username", mySqlConnection);
+
+                cmd.Parameters.Add("?username", MySqlDbType.Text).Value = username;
                 MySqlDataReader myReader = cmd.ExecuteReader();
 
                 while (myReader.Read())
                 {
-                    this.label2.Text = myReader["username"].ToString() + "'s Profile Picture";
-                    this.label3.Text = "Name: " + myReader["username"].ToString();
-                    this.label4.Text = "Email: " + myReader["Email"].ToString();
-                    this.label5.Text = "Phone Number: " + myReader["Phone_Number"].ToString();
-                    this.label5.Text = "Payment Details: " + myReader["Payment_Details"].ToString();
+                    this.label2.Text = $"{myReader["username"].ToString()}'s Profile Picture";
+                    this.label3.Text = $"Name: {myReader["username"].ToString()}";
+                    this.label4.Text = $"Email: {myReader["Email"].ToString()}";
+                    this.label5.Text = $"Phone Number: {myReader["Phone_Number"].ToString()}";
+                    this.label5.Text = $"Payment Details: {myReader["Payment_Details"].ToString()}";
                 }
 
                 if (myReader.NextResult())
                 {
                     while (myReader.Read())
                     {
-                        this.label6.Text = "Account Balance: " + myReader["Account_Balance"].ToString() + "$";
-                        this.label7.Text = "Available Points: " + myReader["Redeem_Points"].ToString();
+                        this.label6.Text = $"Account Balance: {myReader["Account_Balance"].ToString()}$";
+                        this.label7.Text = $"Available Points: {myReader["Redeem_Points"].ToString()}";
                     }
                 }
             }
