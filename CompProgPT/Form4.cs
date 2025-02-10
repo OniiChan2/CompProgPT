@@ -23,9 +23,9 @@ namespace CompProgPT
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            this.label3.Text = Form3.price.ToString() + "₱";
+            this.label3.Text = $"{Form3.price.ToString()}₱";
             listBox1.DataSource = Form3.items;
-            this.label1.Text = Form1.username + "'s Cart";
+            this.label1.Text = $"{Form1.username}'s Cart";
 
         }
 
@@ -77,7 +77,7 @@ namespace CompProgPT
                 try
                 {
                     mySqlConnection.Open();
-                    MySqlCommand cmd = new MySqlCommand("SELECT * FROM balance WHERE username='" + username + "'", mySqlConnection);
+                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM balance WHERE username='{username}'", mySqlConnection);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     reader.Read();
                     current_balance = Convert.ToInt32(reader["Account_Balance"]);
@@ -86,15 +86,14 @@ namespace CompProgPT
 
                     if (price > current_balance)
                     {
-                        MessageBox.Show("Your Balance: " + current_balance + "$ is lower than " + price + "$");
-
+                        MessageBox.Show($"Your Balance: {current_balance} ₱ is lower than {price} ₱");
                     }
 
                     if (price <= current_balance)
                     {
                         string items1 = String.Join(" ,", items);
                         MessageBox.Show("Thank you for Shopping! Orders have been successfully placed!");
-                        MessageBox.Show("Your Orders: " + items1);
+                        MessageBox.Show($"Your Orders: {items1}");
                         MessageBox.Show("You will now be brought back to the Orders Page");
                         new_balance = current_balance - price;
                         new_points = current_points + points;
@@ -103,7 +102,7 @@ namespace CompProgPT
                         cmd.Parameters.AddWithValue("?username", username);
                         cmd.Parameters.AddWithValue("?points", points);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("New Balance is now " + new_balance + "$, " + points + " New Add Points");
+                        MessageBox.Show($"New Balance is now {new_balance}₱, {points} New Add Points");
                         items.Clear();
                         price = 0;
                         points = 0;

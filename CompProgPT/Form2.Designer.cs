@@ -39,12 +39,13 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            checkBox1 = new CheckBox();
             button1 = new Button();
             linkLabel1 = new LinkLabel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label7 = new Label();
+            PW_Hidden = new Button();
+            PW_Show = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -145,19 +146,6 @@
             label6.TabIndex = 10;
             label6.Text = "Phone Number :";
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(381, 154);
-            checkBox1.Margin = new Padding(3, 2, 3, 2);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(66, 21);
-            checkBox1.TabIndex = 11;
-            checkBox1.Text = "Show?";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
-            // 
             // button1
             // 
             button1.BackColor = Color.Blue;
@@ -215,16 +203,40 @@
             label7.TabIndex = 16;
             label7.Text = "Sign up to continue";
             // 
+            // PW_Hidden
+            // 
+            PW_Hidden.BackgroundImage = (Image)resources.GetObject("PW_Hidden.BackgroundImage");
+            PW_Hidden.BackgroundImageLayout = ImageLayout.Stretch;
+            PW_Hidden.Cursor = Cursors.Hand;
+            PW_Hidden.Location = new Point(382, 148);
+            PW_Hidden.Name = "PW_Hidden";
+            PW_Hidden.Size = new Size(37, 36);
+            PW_Hidden.TabIndex = 17;
+            PW_Hidden.UseVisualStyleBackColor = true;
+            PW_Hidden.Click += PW_Hidden_Click;
+            // 
+            // PW_Show
+            // 
+            PW_Show.BackgroundImage = (Image)resources.GetObject("PW_Show.BackgroundImage");
+            PW_Show.BackgroundImageLayout = ImageLayout.Zoom;
+            PW_Show.Cursor = Cursors.Hand;
+            PW_Show.Location = new Point(382, 147);
+            PW_Show.Name = "PW_Show";
+            PW_Show.Size = new Size(37, 36);
+            PW_Show.TabIndex = 18;
+            PW_Show.UseVisualStyleBackColor = true;
+            PW_Show.Click += PW_Show_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(916, 386);
+            Controls.Add(PW_Hidden);
             Controls.Add(label7);
             Controls.Add(pictureBox1);
             Controls.Add(linkLabel1);
             Controls.Add(button1);
-            Controls.Add(checkBox1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -236,6 +248,8 @@
             Controls.Add(Pw_Input);
             Controls.Add(username);
             Controls.Add(label1);
+            Controls.Add(PW_Show);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             Text = "Sign Up Page";
@@ -256,11 +270,12 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private CheckBox checkBox1;
         private Button button1;
         private LinkLabel linkLabel1;
         private PictureBox pictureBox1;
         private Label label1;
         private Label label7;
+        private Button PW_Hidden;
+        private Button PW_Show;
     }
 }

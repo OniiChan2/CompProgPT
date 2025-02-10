@@ -219,6 +219,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form6";
             Text = "User Profile";

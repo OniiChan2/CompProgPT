@@ -32,7 +32,7 @@ namespace CompProgPT
         public void button2_Click(object sender, EventArgs e)
         {
             username = this.textBox1.Text;
-            password = this.textBox2.Text;
+            password = this.PW_Input.Text;
 
             try
             {
@@ -60,10 +60,6 @@ namespace CompProgPT
             }
 
         }
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            textBox2.UseSystemPasswordChar = checkBox1.Checked ? false : true;
-        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             DialogResult a = MessageBox.Show("Are you want to exit?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -71,6 +67,28 @@ namespace CompProgPT
             {
                 Application.Exit();
             }
+        }
+
+
+        private void PW_Hidden_Click(object sender, EventArgs e)
+        {
+
+            if (PW_Input.UseSystemPasswordChar)
+            {
+                PW_Input.UseSystemPasswordChar = false;
+                this.PW_Hidden.SendToBack();
+            }
+        }
+
+        private void PW_Show_Click(object sender, EventArgs e)
+        {
+
+            if (!PW_Input.UseSystemPasswordChar)
+            {
+                PW_Input.UseSystemPasswordChar = true;
+                this.PW_Show.SendToBack();
+            }
+
         }
     }
 }

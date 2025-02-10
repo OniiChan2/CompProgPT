@@ -34,12 +34,13 @@
             button2 = new Button();
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
+            PW_Input = new TextBox();
             linkLabel1 = new LinkLabel();
             label4 = new Label();
-            checkBox1 = new CheckBox();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            PW_Hidden = new Button();
+            PW_Show = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -106,15 +107,15 @@
             label3.TabIndex = 5;
             label3.Text = "Password : ";
             // 
-            // textBox2
+            // PW_Input
             // 
-            textBox2.Font = new Font("Book Antiqua", 11.25F);
-            textBox2.Location = new Point(204, 195);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(152, 26);
-            textBox2.TabIndex = 6;
-            textBox2.UseSystemPasswordChar = true;
+            PW_Input.Font = new Font("Book Antiqua", 11.25F);
+            PW_Input.Location = new Point(204, 195);
+            PW_Input.Margin = new Padding(3, 2, 3, 2);
+            PW_Input.Name = "PW_Input";
+            PW_Input.Size = new Size(152, 26);
+            PW_Input.TabIndex = 6;
+            PW_Input.UseSystemPasswordChar = true;
             // 
             // linkLabel1
             // 
@@ -143,20 +144,6 @@
             label4.TabIndex = 14;
             label4.Text = "Log-in to continue\r\n";
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.ForeColor = Color.Black;
-            checkBox1.Location = new Point(362, 199);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(66, 21);
-            checkBox1.TabIndex = 15;
-            checkBox1.Text = "Show?";
-            checkBox1.UseVisualStyleBackColor = false;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged_1;
-            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
@@ -181,6 +168,30 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
+            // PW_Hidden
+            // 
+            PW_Hidden.BackgroundImage = (Image)resources.GetObject("PW_Hidden.BackgroundImage");
+            PW_Hidden.BackgroundImageLayout = ImageLayout.Stretch;
+            PW_Hidden.Cursor = Cursors.Hand;
+            PW_Hidden.Location = new Point(362, 191);
+            PW_Hidden.Name = "PW_Hidden";
+            PW_Hidden.Size = new Size(37, 36);
+            PW_Hidden.TabIndex = 18;
+            PW_Hidden.UseVisualStyleBackColor = true;
+            PW_Hidden.Click += PW_Hidden_Click;
+            // 
+            // PW_Show
+            // 
+            PW_Show.BackgroundImage = (Image)resources.GetObject("PW_Show.BackgroundImage");
+            PW_Show.BackgroundImageLayout = ImageLayout.Zoom;
+            PW_Show.Cursor = Cursors.Hand;
+            PW_Show.Location = new Point(362, 191);
+            PW_Show.Name = "PW_Show";
+            PW_Show.Size = new Size(37, 36);
+            PW_Show.TabIndex = 19;
+            PW_Show.UseVisualStyleBackColor = true;
+            PW_Show.Click += PW_Show_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -188,17 +199,18 @@
             BackColor = SystemColors.Control;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(894, 365);
+            Controls.Add(PW_Hidden);
             Controls.Add(pictureBox2);
-            Controls.Add(checkBox1);
             Controls.Add(label4);
             Controls.Add(linkLabel1);
-            Controls.Add(textBox2);
+            Controls.Add(PW_Input);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(pictureBox1);
+            Controls.Add(PW_Show);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
@@ -216,11 +228,12 @@
         private Button button2;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox PW_Input;
         private LinkLabel linkLabel1;
         private Label label4;
-        private CheckBox checkBox1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button PW_Hidden;
+        private Button PW_Show;
     }
 }

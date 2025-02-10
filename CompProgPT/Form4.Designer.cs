@@ -145,6 +145,7 @@
             Controls.Add(label1);
             Font = new Font("Book Antiqua", 15.75F);
             ForeColor = Color.White;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(6, 4, 6, 4);
             Name = "Form4";
             Text = "User's Cart";

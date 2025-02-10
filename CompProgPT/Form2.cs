@@ -35,7 +35,8 @@ namespace CompProgPT
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
             MySqlCommand cmd = new MySqlCommand();
 
-            if (String.IsNullOrEmpty(this.username.Text) && String.IsNullOrEmpty(this.Pw_Input.Text)) {
+            if (String.IsNullOrEmpty(this.username.Text) && String.IsNullOrEmpty(this.Pw_Input.Text))
+            {
 
                 MessageBox.Show("Username or Password Cannot Be Er");
             }
@@ -68,13 +69,8 @@ namespace CompProgPT
             }
             finally
             {
-                mySqlConnection.Close();    
+                mySqlConnection.Close();
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -84,17 +80,24 @@ namespace CompProgPT
             LoginForm.Show();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+       
+        private void PW_Show_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                Pw_Input.UseSystemPasswordChar = false;
-                Pw_Input2.UseSystemPasswordChar = false;
-            }
-            else
+            if (!Pw_Input.UseSystemPasswordChar && !Pw_Input2.UseSystemPasswordChar)
             {
                 Pw_Input.UseSystemPasswordChar = true;
                 Pw_Input2.UseSystemPasswordChar = true;
+                this.PW_Show.SendToBack();
+            }
+        }
+
+        private void PW_Hidden_Click(object sender, EventArgs e)
+        {
+            if (Pw_Input.UseSystemPasswordChar && Pw_Input2.UseSystemPasswordChar)
+            {
+                Pw_Input.UseSystemPasswordChar = false;
+                Pw_Input2.UseSystemPasswordChar = false;
+                this.PW_Hidden.SendToBack();
             }
         }
     }
