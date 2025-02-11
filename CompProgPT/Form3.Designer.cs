@@ -67,6 +67,7 @@
             label14 = new Label();
             label13 = new Label();
             CartSideBar = new Panel();
+            TopUp = new PictureBox();
             label17 = new Label();
             label16 = new Label();
             label15 = new Label();
@@ -77,6 +78,7 @@
             panel1 = new Panel();
             AccBalance = new Label();
             pictureBox1 = new PictureBox();
+            topUpCaption = new Label();
             ((System.ComponentModel.ISupportInitialize)UserProfile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ShoppinCart).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LogOut).BeginInit();
@@ -94,6 +96,7 @@
             roundedPanels6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             CartSideBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TopUp).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -103,7 +106,7 @@
             UserProfile.BackColor = Color.Transparent;
             UserProfile.Cursor = Cursors.Hand;
             UserProfile.Image = (Image)resources.GetObject("UserProfile.Image");
-            UserProfile.Location = new Point(25, 161);
+            UserProfile.Location = new Point(33, 172);
             UserProfile.Name = "UserProfile";
             UserProfile.Size = new Size(47, 50);
             UserProfile.SizeMode = PictureBoxSizeMode.Zoom;
@@ -576,6 +579,8 @@
             // CartSideBar
             // 
             CartSideBar.BackColor = SystemColors.Highlight;
+            CartSideBar.Controls.Add(topUpCaption);
+            CartSideBar.Controls.Add(TopUp);
             CartSideBar.Controls.Add(label17);
             CartSideBar.Controls.Add(label16);
             CartSideBar.Controls.Add(label15);
@@ -591,6 +596,18 @@
             CartSideBar.Name = "CartSideBar";
             CartSideBar.Size = new Size(326, 522);
             CartSideBar.TabIndex = 58;
+            // 
+            // TopUp
+            // 
+            TopUp.Cursor = Cursors.Hand;
+            TopUp.Image = (Image)resources.GetObject("TopUp.Image");
+            TopUp.Location = new Point(15, 413);
+            TopUp.Name = "TopUp";
+            TopUp.Size = new Size(71, 76);
+            TopUp.SizeMode = PictureBoxSizeMode.Zoom;
+            TopUp.TabIndex = 36;
+            TopUp.TabStop = false;
+            TopUp.Click += pictureBox2_Click_1;
             // 
             // label17
             // 
@@ -636,7 +653,7 @@
             ProfileCaption.AutoSize = true;
             ProfileCaption.Cursor = Cursors.Hand;
             ProfileCaption.Font = new Font("Book Antiqua", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ProfileCaption.Location = new Point(116, 178);
+            ProfileCaption.Location = new Point(124, 189);
             ProfileCaption.Name = "ProfileCaption";
             ProfileCaption.Size = new Size(121, 26);
             ProfileCaption.TabIndex = 31;
@@ -688,12 +705,24 @@
             pictureBox1.BackColor = Color.Blue;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(570, 28);
+            pictureBox1.Location = new Point(593, 28);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 44);
+            pictureBox1.Size = new Size(28, 38);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 32;
             pictureBox1.TabStop = false;
+            // 
+            // topUpCaption
+            // 
+            topUpCaption.AutoSize = true;
+            topUpCaption.Cursor = Cursors.Hand;
+            topUpCaption.Font = new Font("Book Antiqua", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            topUpCaption.Location = new Point(106, 437);
+            topUpCaption.Name = "topUpCaption";
+            topUpCaption.Size = new Size(177, 26);
+            topUpCaption.TabIndex = 37;
+            topUpCaption.Text = "Top Up / Cash In";
+            topUpCaption.Click += topUpCaption_Click;
             // 
             // Form3
             // 
@@ -739,6 +768,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             CartSideBar.ResumeLayout(false);
             CartSideBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TopUp).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -793,5 +823,7 @@
         private Panel panel1;
         private Label AccBalance;
         private PictureBox pictureBox1;
+        private PictureBox TopUp;
+        private Label topUpCaption;
     }
 }

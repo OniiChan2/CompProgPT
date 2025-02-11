@@ -17,6 +17,8 @@ namespace CompProgPT
         static void added(string text = "Item Added To Your Cart!") => MessageBox.Show(text);
         public static int price = 0;
         public static int points = 0;
+        string accountPayment;
+        Form7 topUp = new Form7();
         bool sideBarExpand;
         public static List<String> items = new List<string>();
 
@@ -27,26 +29,48 @@ namespace CompProgPT
         private void Form3_Load(object sender, EventArgs e)
         {
             string username = Form1.username;
-            int userBalance;
             string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
 
-            if (string.IsNullOrEmpty(username)) {
+            if (string.IsNullOrEmpty(username))
+            {
                 this.AccBalance.Text = "Account Balance: 0₱";
             }
             else
             {
                 try
                 {
-                    mySqlConnection.Open();
-                    MySqlCommand cmd = new MySqlCommand();
-                    cmd.Connection = mySqlConnection;
-                    cmd.CommandText = "SELECT * FROM balance WHERE username=?username";
-                    cmd.Parameters.AddWithValue("?username", username);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    reader.Read();
-                    this.AccBalance.Text = $"Account Balance: {reader["Account_Balance"]}₱";
-                    reader.Close();
+                    using (var conn = new MySqlConnection(mysqlconn))
+                    using (var cmd = conn.CreateCommand())
+                    {
+                        conn.Open();
+                        cmd.CommandText = "SELECT * FROM balance WHERE username=?username;";
+                        cmd.Parameters.AddWithValue("?username", username);
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read()) {
+                                this.AccBalance.Text = $"Account Balance: {reader["Account_Balance"]}₱";
+
+                                using (var conn2 =  new MySqlConnection(mysqlconn))
+                                using (var cmd2 = conn2.CreateCommand())
+                                {
+                                    conn2.Open();
+                                    cmd2.CommandText = "SELECT * FROM usersinfo WHERE username=?username;";
+                                    cmd2.Parameters.AddWithValue("?username", username);
+                                    using (var reader2 = cmd2.ExecuteReader())
+                                    {
+                                        while (reader2.Read())
+                                        {
+                                            accountPayment = Convert.ToString(reader2["Payment_Details"]);
+                                        }
+
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
 
                 }
                 catch (Exception ex)
@@ -59,7 +83,7 @@ namespace CompProgPT
                     mySqlConnection.Close();
                 }
             }
-           
+
 
 
         }
@@ -182,6 +206,32 @@ namespace CompProgPT
             price = 0;
             items.Clear();
             LoginApp.Show();
+        }
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(accountPayment))
+            {
+                MessageBox.Show("You seem have an invalid payment details please check your profile and add a payment detail",
+                    "No Payment Details", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+            }
+            else
+            {
+                this.Hide();
+                topUp.Show();
+            }
+        }
+        private void topUpCaption_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(accountPayment))
+            {
+                MessageBox.Show("You seem have an invalid payment details please check your profile and add a payment detail",
+                    "No Payment Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Hide();
+                topUp.Show();
+            }
         }
     }
 }

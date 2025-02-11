@@ -97,6 +97,7 @@ namespace CompProgPT
             cashin = 0;
             this.Hide();
             Form6 Form6 = new Form6();
+            Form6.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
