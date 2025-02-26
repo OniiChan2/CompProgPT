@@ -67,6 +67,7 @@
             label14 = new Label();
             label13 = new Label();
             CartSideBar = new Panel();
+            topUpCaption = new Label();
             TopUp = new PictureBox();
             label17 = new Label();
             label16 = new Label();
@@ -77,8 +78,6 @@
             AnimTimer = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
             AccBalance = new Label();
-            pictureBox1 = new PictureBox();
-            topUpCaption = new Label();
             ((System.ComponentModel.ISupportInitialize)UserProfile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ShoppinCart).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LogOut).BeginInit();
@@ -98,7 +97,6 @@
             CartSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TopUp).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // UserProfile
@@ -570,7 +568,7 @@
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Book Antiqua", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.Blue;
-            label13.Location = new Point(22, 182);
+            label13.Location = new Point(15, 180);
             label13.Name = "label13";
             label13.Size = new Size(41, 17);
             label13.TabIndex = 56;
@@ -596,6 +594,18 @@
             CartSideBar.Name = "CartSideBar";
             CartSideBar.Size = new Size(326, 522);
             CartSideBar.TabIndex = 58;
+            // 
+            // topUpCaption
+            // 
+            topUpCaption.AutoSize = true;
+            topUpCaption.Cursor = Cursors.Hand;
+            topUpCaption.Font = new Font("Book Antiqua", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            topUpCaption.Location = new Point(106, 437);
+            topUpCaption.Name = "topUpCaption";
+            topUpCaption.Size = new Size(177, 26);
+            topUpCaption.TabIndex = 37;
+            topUpCaption.Text = "Top Up / Cash In";
+            topUpCaption.Click += topUpCaption_Click;
             // 
             // TopUp
             // 
@@ -674,14 +684,13 @@
             // 
             // AnimTimer
             // 
-            AnimTimer.Interval = 5;
+            AnimTimer.Interval = 10;
             AnimTimer.Tick += CartAnim_Timer;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Blue;
             panel1.Controls.Add(AccBalance);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, -10);
@@ -694,35 +703,11 @@
             AccBalance.AutoSize = true;
             AccBalance.Font = new Font("Book Antiqua", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AccBalance.ForeColor = Color.White;
-            AccBalance.Location = new Point(616, 34);
+            AccBalance.Location = new Point(611, 34);
             AccBalance.Name = "AccBalance";
             AccBalance.Size = new Size(244, 28);
             AccBalance.TabIndex = 33;
             AccBalance.Text = "Account Balance: {0}₱\r\n";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Blue;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(593, 28);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(28, 38);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 32;
-            pictureBox1.TabStop = false;
-            // 
-            // topUpCaption
-            // 
-            topUpCaption.AutoSize = true;
-            topUpCaption.Cursor = Cursors.Hand;
-            topUpCaption.Font = new Font("Book Antiqua", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            topUpCaption.Location = new Point(106, 437);
-            topUpCaption.Name = "topUpCaption";
-            topUpCaption.Size = new Size(177, 26);
-            topUpCaption.TabIndex = 37;
-            topUpCaption.Text = "Top Up / Cash In";
-            topUpCaption.Click += topUpCaption_Click;
             // 
             // Form3
             // 
@@ -771,7 +756,6 @@
             ((System.ComponentModel.ISupportInitialize)TopUp).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -822,7 +806,6 @@
         private Label label16;
         private Panel panel1;
         private Label AccBalance;
-        private PictureBox pictureBox1;
         private PictureBox TopUp;
         private Label topUpCaption;
     }
