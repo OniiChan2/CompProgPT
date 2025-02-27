@@ -36,7 +36,7 @@ namespace CompProgPT
 
             try
             {
-                string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
+                string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
                 MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
                 MySqlDataAdapter SDA = new MySqlDataAdapter("SELECT COUNT(*) FROM usersinfo WHERE Username='" + username + "' AND Password='" + password + "'", mySqlConnection);
                 DataTable dt = new DataTable();
@@ -58,7 +58,6 @@ namespace CompProgPT
                 MessageBox.Show("ERROR SOMETHING WHENT WRONG! Please contact a dev~ UwU");
                 MessageBox.Show(ex.Message);
             }
-
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {

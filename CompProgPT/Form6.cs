@@ -24,7 +24,7 @@ namespace CompProgPT
         {
             string username = Form1.username;
             this.label1.Text = $"{username}'s Profile";
-            string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
+            string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
 
             try

@@ -32,7 +32,7 @@ namespace CompProgPT
 
             string username = Form1.username;
             string details = this.textBox1.Text;
-            string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
+            string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
             MySqlCommand cmd = new MySqlCommand();
 

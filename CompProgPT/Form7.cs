@@ -20,7 +20,7 @@ namespace CompProgPT
         {
             InitializeComponent();
             string username = Form1.username;
-            string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
+            string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
 
             if (string.IsNullOrEmpty(username))
@@ -70,7 +70,7 @@ namespace CompProgPT
             Form6 Form6 = new Form6();
             Form6.Show();
             string username = Form1.username;
-            string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
+            string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
 
             try
@@ -126,12 +126,17 @@ namespace CompProgPT
 
         private void Enter_Btn_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("this doesn't do shit yet", "PLACEHOLDER", MessageBoxButtons.OK);
         }
 
         private void Clear_Btn_Click(object sender, EventArgs e)
         {
             this.cashValue.Text = "0";
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

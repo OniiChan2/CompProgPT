@@ -29,7 +29,7 @@ namespace CompProgPT
         private void Form3_Load(object sender, EventArgs e)
         {
             string username = Form1.username;
-            string mysqlconn = "server=localhost; user=root; database=customers_database; password=";
+            string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
 
             if (string.IsNullOrEmpty(username))
@@ -48,10 +48,11 @@ namespace CompProgPT
                         cmd.Parameters.AddWithValue("?username", username);
                         using (var reader = cmd.ExecuteReader())
                         {
-                            while (reader.Read()) {
+                            while (reader.Read())
+                            {
                                 this.AccBalance.Text = $"Account Balance: {reader["Account_Balance"]}₱";
 
-                                using (var conn2 =  new MySqlConnection(mysqlconn))
+                                using (var conn2 = new MySqlConnection(mysqlconn))
                                 using (var cmd2 = conn2.CreateCommand())
                                 {
                                     conn2.Open();
@@ -212,7 +213,7 @@ namespace CompProgPT
             if (string.IsNullOrEmpty(accountPayment))
             {
                 MessageBox.Show("You seem have an invalid payment details please check your profile and add a payment detail",
-                    "No Payment Details", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+                    "No Payment Details", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -232,6 +233,11 @@ namespace CompProgPT
                 this.Hide();
                 topUp.Show();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
