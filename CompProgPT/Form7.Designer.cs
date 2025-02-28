@@ -441,7 +441,7 @@
             Cancel_Btn.Cursor = Cursors.Hand;
             Cancel_Btn.FlatAppearance.BorderSize = 0;
             Cancel_Btn.FlatStyle = FlatStyle.Flat;
-            Cancel_Btn.Font = new Font("Book Antiqua", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Cancel_Btn.Font = new Font("Book Antiqua", 15.75F, FontStyle.Bold);
             Cancel_Btn.ForeColor = Color.Black;
             Cancel_Btn.Location = new Point(633, 215);
             Cancel_Btn.Name = "Cancel_Btn";
@@ -460,7 +460,7 @@
             Clear_Btn.Cursor = Cursors.Hand;
             Clear_Btn.FlatAppearance.BorderSize = 0;
             Clear_Btn.FlatStyle = FlatStyle.Flat;
-            Clear_Btn.Font = new Font("Book Antiqua", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Clear_Btn.Font = new Font("Book Antiqua", 15.75F, FontStyle.Bold);
             Clear_Btn.ForeColor = Color.Black;
             Clear_Btn.Location = new Point(633, 284);
             Clear_Btn.Name = "Clear_Btn";
@@ -479,7 +479,7 @@
             Enter_Btn.Cursor = Cursors.Hand;
             Enter_Btn.FlatAppearance.BorderSize = 0;
             Enter_Btn.FlatStyle = FlatStyle.Flat;
-            Enter_Btn.Font = new Font("Book Antiqua", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Enter_Btn.Font = new Font("Book Antiqua", 15.75F, FontStyle.Bold);
             Enter_Btn.ForeColor = Color.Black;
             Enter_Btn.Location = new Point(633, 355);
             Enter_Btn.Name = "Enter_Btn";
@@ -500,7 +500,7 @@
             roundedButton4.FlatStyle = FlatStyle.Flat;
             roundedButton4.Font = new Font("Book Antiqua", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             roundedButton4.ForeColor = Color.Black;
-            roundedButton4.Location = new Point(633, 422);
+            roundedButton4.Location = new Point(633, 427);
             roundedButton4.Name = "roundedButton4";
             roundedButton4.Size = new Size(112, 63);
             roundedButton4.TabIndex = 31;

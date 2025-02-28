@@ -15,7 +15,8 @@ namespace CompProgPT
 {
     public partial class Form7 : Form
     {
-        int cashin;
+        int cashin = 0;
+        Control ActiveControl;
         public Form7()
         {
             InitializeComponent();
@@ -63,12 +64,32 @@ namespace CompProgPT
             }
 
         }
-
-
-        private void button10_Click(object sender, EventArgs e)
+        
+        private void Button_1_Click(object sender, EventArgs e)
         {
-            Form6 Form6 = new Form6();
-            Form6.Show();
+            Button btn = (Button)sender;
+            ActiveControl.Focus();
+            SendKeys.Send(btn.Text);
+        }
+        private void Enter_btn(object sender, EventArgs e)
+        {
+            ActiveControl = (Control)sender;
+        }
+
+        private void Cancel_Btn_Click(object sender, EventArgs e)
+        {
+            Form3 mrktplc = new Form3();
+            this.Hide();
+            mrktplc.Show();
+            this.cashValue.Text = "0";
+        }
+
+        private void Enter_Btn_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("this doesn't do shit yet", "PLACEHOLDER", MessageBoxButtons.OK);
+
+            Form3 market = new Form3();
+            cashin = Convert.ToInt32(this.cashValue.Text);
             string username = Form1.username;
             string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
@@ -89,6 +110,8 @@ namespace CompProgPT
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(cashin + "$ Added to Balance");
                 this.Hide();
+                market.Show();
+
             }
             catch (Exception ex)
             {
@@ -100,33 +123,6 @@ namespace CompProgPT
             {
                 mySqlConnection.Close();
             }
-        }
-
-
-        Control ActiveControl;
-        private void Button_1_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            ActiveControl.Focus();
-            SendKeys.Send(btn.Text);
-        }
-
-        private void Enter_btn(object sender, EventArgs e)
-        {
-            ActiveControl = (Control)sender;
-        }
-
-        private void Cancel_Btn_Click(object sender, EventArgs e)
-        {
-            Form3 mrktplc = new Form3();
-            this.Close();
-            mrktplc.Show();
-            this.cashValue.Text = "0";
-        }
-
-        private void Enter_Btn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("this doesn't do shit yet", "PLACEHOLDER", MessageBoxButtons.OK);
         }
 
         private void Clear_Btn_Click(object sender, EventArgs e)

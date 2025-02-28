@@ -84,9 +84,6 @@ namespace CompProgPT
                     mySqlConnection.Close();
                 }
             }
-
-
-
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -234,7 +231,6 @@ namespace CompProgPT
                 topUp.Show();
             }
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

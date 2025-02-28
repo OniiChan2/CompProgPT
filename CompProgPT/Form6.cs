@@ -14,7 +14,7 @@ namespace CompProgPT
     public partial class Form6 : Form
     {
         private string paymentDetails;
-       
+
         public Form6()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace CompProgPT
         public void Form6_Load(object sender, EventArgs e)
         {
             string username = Form1.username;
-            this.label1.Text = $"{username}'s Profile";
+            this.profileName.Text = $"{username}'s Profile";
             string mysqlconn = "server=sql12.freesqldatabase.com; user=sql12765120; database=sql12765120; password=JgWhquluQA";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlconn);
 
@@ -38,12 +38,11 @@ namespace CompProgPT
 
                 while (myReader.Read())
                 {
-                    this.label2.Text = $"{myReader["username"].ToString()}'s Profile Picture";
-                    this.label3.Text = $"Name: {myReader["username"].ToString()}";
-                    this.label4.Text = $"Email: {myReader["Email"].ToString()}";
-                    this.label5.Text = $"Phone Number: {myReader["Phone_Number"].ToString()}";
-                    this.label5.Text = $"Payment Details: {myReader["Payment_Details"].ToString()}";
-                    paymentDetails = myReader["Payment_Details"].ToString();
+                    this.userName.Text = $"{myReader["username"].ToString()}";
+                    this.label4.Text = $"{myReader["Email"].ToString()}";
+                    this.label3.Text = $"{myReader["Phone_Number"].ToString()}";
+                    this.label5.Text = $"{myReader["Payment_Details"].ToString()}";
+                    paymentDetails = $"{myReader["Payment_Details"].ToString()}";
 
 
                 }
@@ -52,8 +51,8 @@ namespace CompProgPT
                 {
                     while (myReader.Read())
                     {
-                        this.label6.Text = $"Account Balance: {myReader["Account_Balance"].ToString()}$";
-                        this.label7.Text = $"Available Points: {myReader["Redeem_Points"].ToString()}";
+                        this.label6.Text = $"{myReader["Account_Balance"].ToString()}₱";
+                        this.label7.Text = $"{myReader["Redeem_Points"].ToString()}";
                     }
                 }
             }
@@ -68,18 +67,18 @@ namespace CompProgPT
                 mySqlConnection.Close();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-           
             Form3 orders = new Form3();
             this.Hide();
             orders.Show();
         }
-        private void button2_Click(object sender, EventArgs e)
+   
+        private void roundedButton1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(paymentDetails))
             {
-                MessageBox.Show("Cannot Cash In! Payment details are blank or are Invalid.","Payment Details Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot Cash In! Payment details are blank or are Invalid.", "Payment Details Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -89,24 +88,18 @@ namespace CompProgPT
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Form8 details = new Form8();
-            details.Show();
-            this.Hide();
-        }
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void logoutBTN_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form1 login = new Form1();
             login.Show();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void btn_paymentdetails_Click(object sender, EventArgs e)
         {
-            Form3 orders = new Form3();
+            Form8 details = new Form8();
+            details.Show();
             this.Hide();
-            orders.Show();
         }
     }
 }
